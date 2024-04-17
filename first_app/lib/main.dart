@@ -1,3 +1,4 @@
+import 'package:first_app/location_list.dart';
 import 'package:flutter/material.dart';
 import 'location_detail.dart';
 import 'mocks/mock_location.dart';
@@ -9,10 +10,10 @@ void main() {
 
 class FirstApp extends StatelessWidget {
   FirstApp({super.key});
-  final Location mockLocation = MockLocation.fetchAny();
+  final List<Location> mockLocations = MockLocation.fetchAll();
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: LocationDetail(mockLocation));
+    return MaterialApp(home: LocationList(mockLocations));
   }
 }
